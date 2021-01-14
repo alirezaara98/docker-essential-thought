@@ -1,0 +1,42 @@
+docker ps -> list all runnig containers 
+docker ps -a -> list all containers (all)
+docker images -> list all images
+docker pull -> pull an image
+docker run -> start a container
+---------------------------------
+Containers: 
+3 ta akhar.) docker ps 
+6. docker start/stop/restart CONTAINER_ID/CONTAINER_NAME
+7.docker rm -f CONTAINER_ID/CONTAINER_NAME
+5. docker exec -it some-mongo /bin/bash
+4. docker logs -f CONTAINER_ID/CONTAINER_NAME
+
+3. docker run -d --name CONTAINER_NAME IMAGE_NAME:TAG
+
+---------------------------------
+Images: 
+1. docker image pull IMAGE_NAME:TAG
+docker image push IMAGE_NAME:TAG
+
+2. docker images 
+8.docker rmi IMAGE_NAME:TAG -> remove image
+
+
+
+Tag: ->it's like image version 
+f-1-2
+f-3-4
+latest-> nginx:19.2.4 -, Default tag.
+
+---------------------------------
+Networking: 
+ docker run -d --name CONTAINER_NAME -p HOST_LISTEN_IP:HOST_PORT:CONTAINER_PORT   IMAGE_NAME:TAG
+---------------------------------
+
+TODO:
+docker volumes
+docker file
+image tagging
+docker network
+docker compose
+container orcherstration intro
