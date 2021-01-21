@@ -1,42 +1,65 @@
+intro: 
 docker ps -> list all runnig containers 
 docker ps -a -> list all containers (all)
 docker images -> list all images
 docker pull -> pull an image
 docker run -> start a container
----------------------------------
-Containers: 
-3 ta akhar.) docker ps 
-6. docker start/stop/restart CONTAINER_ID/CONTAINER_NAME
-7.docker rm -f CONTAINER_ID/CONTAINER_NAME
-5. docker exec -it some-mongo /bin/bash
-4. docker logs -f CONTAINER_ID/CONTAINER_NAME
 
-3. docker run -d --name CONTAINER_NAME IMAGE_NAME:TAG
+
+---------------------------------
+Containers Commands: 
+docker ps 
+docker start/stop/restart CONTAINER_ID/CONTAINER_NAME
+docker rm -f CONTAINER_ID/CONTAINER_NAME
+docker exec -it some-mongo /bin/bash
+docker logs -f CONTAINER_ID/CONTAINER_NAME
+
+docker run -d --name CONTAINER_NAME -p HOST_LISTEN_IP:HOST_PORT:CONTAINER_PORT  -v VOLUME_NAME:DIRECTORY_INSIDE_CONTAINER -v DIRECTORY_ON_HOST:DIRECTORY_INSIDE_CONTAINER  IMAGE_NAME:TAG 
 
 ---------------------------------
 Images: 
-1. docker image pull IMAGE_NAME:TAG
+docker image pull IMAGE_NAME:TAG
 docker image push IMAGE_NAME:TAG
 
-2. docker images 
-8.docker rmi IMAGE_NAME:TAG -> remove image
+docker images 
+docker rmi IMAGE_NAME:TAG 
+docker build -t IMAGE_NAME:IMAGE_TAG .
 
 
-
-Tag: ->it's like image version 
+Tag: ->it's image version 
 f-1-2
 f-3-4
 latest-> nginx:19.2.4 -, Default tag.
+docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+
+
+
+
+---------------------------------
+Volume: 
+docker volume ls
+docker volume create VOLUME_NAME
+docker volume inspect VOLUME_NAME
+
 
 ---------------------------------
 Networking: 
- docker run -d --name CONTAINER_NAME -p HOST_LISTEN_IP:HOST_PORT:CONTAINER_PORT   IMAGE_NAME:TAG
----------------------------------
+docker network ls
+docker network create --driver bridge NETWORKNAME
+docker network inspect NETWORKNAME
+
+docker run -d --name CONTAINER_NAME --network NETWORKNAME   IMAGE_NAME:TAG
 
 TODO:
-docker volumes
-docker file
 image tagging
 docker network
 docker compose
 container orcherstration intro
+
+
+
+dockerfile cheatsheet: https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index
+
+
+

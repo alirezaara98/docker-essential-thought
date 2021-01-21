@@ -1,0 +1,12 @@
+FROM node:14.4.0-alpine
+AUTHOR mohamad.foroughi@yahoo.com
+
+WORKDIR /app
+
+RUN npm i -g serve
+ 
+COPY . .
+
+EXPOSE 5500
+
+ENTRYPOINT serve -s /app -l 5500
